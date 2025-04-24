@@ -1,0 +1,422 @@
+/*pseudoselectores: son selectores que inician con : pero no existen como tal en el html, son seudoelementos, no existen pero root es se usa para guardar variables o o que se llama como Custom Properties*/
+:root {
+    /* Definimos nuestra paleta de colores */
+    --Primario: #00ffff;
+    /*--Secundario: #ec008c;*/
+    --Secundario: #d6c100;
+    --Tercero: #212121;
+
+
+    /*Letra 1
+        font-family: "Charm", serif;
+        font-weight: 700;
+        font-style: normal;*/
+
+    /* Letra 2
+    font-family:monospace;
+  */
+
+    /* Letra 3
+  font-family: "Just Another Hand", serif;
+  font-weight: 400;
+  font-style: normal;
+*/
+}
+
+/* Globales */
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-size: 16px;
+    font-family: monospace;
+    /*Con esas 2 lineas de atras usamos "rem" la cual es un atributo que proporciona el tamaño a los diferentes tamaños de pantalla que existen*/
+
+    /* Color de fondo como un degradado */
+    /*background-image: linear-gradient(to top, #ffff  0%, #000 100%);*/
+    background-color: var(--Tercero);
+    color: white;
+
+
+}
+header
+{
+    position: fixed;
+    width: 100%;
+    padding: 0.1rem ;
+    text-align: center;
+    color: var(--Primario);
+    background-color: #212121;
+    z-index: 1000; /* Asegura que el header esté sobre otros elementos */
+}
+
+.Contenedor {
+    text-align: center;
+    max-width: 120rem;
+    margin: 0 auto 0 auto;
+}
+
+.Boton {
+    background-color: white;
+    color: black;
+    padding: 1rem 3rem;
+    margin-top: 1rem;
+    font-size: 1.5 rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    border-radius: 0.9rem;
+    text-align: center;
+    border: none;
+}
+
+.Boton:hover {
+    cursor: pointer;
+    background-color: var(--Secundario);
+}
+
+.Sombra {
+    /*Box Shadow: 
+    1) Que tan separado de la izquierda
+    2) que tan sepadaro de arriba
+    3) Que tan lejos va la sombra
+    4) que tanto alumbra la sombra*/
+
+    box-shadow: 0rem 0rem 6rem 1rem rgba(0, 255, 255, 1);
+    background-color: #464646;
+    padding: 2rem;
+    border-radius: 4rem;
+}
+
+/* TipoGrafia */
+h1 {
+    text-align: center;
+    font-size: 3.8 rem;
+    color: var(--Primario);
+}
+
+h2,h3 {
+    text-align: center;
+    color: var(--Secundario);
+}
+
+p {
+    text-align: left;
+}
+
+/*Utilidades*/
+.W-100 {
+    width: 100%;
+}
+.Alinear-Derecha
+{
+    justify-content: flex-end;
+}
+.Flex{
+    display: flex;
+
+}
+
+/* Navegacion Principal */
+.NavBackground {
+    background-color: var(--Primario);
+    padding: 1rem;
+}
+
+.NavegacionPrincipal {
+    /*Propiedad ara distribuir mis enlaces*/
+    display: flex;
+    flex-direction: column;
+    margin-top: 8rem;
+
+}
+
+
+.NavSelected {
+    color: white;
+}
+.NavegacionPrincipal a
+
+/*El a hace referencia a los enlaces*/
+    {
+    display: block;
+    text-align: center;
+    color: black; /*Cambiando el color de la letra  */
+    font-size: 2rem;
+    font-weight: bold;/*Negrila*/
+    padding: 1rem;
+    text-decoration: none;
+}
+
+.NavegacionPrincipal a:hover
+
+/*Efecto que se genera cuando el mouse se para encima de un enlace*/
+    {
+    background: var(--Secundario);
+    color: var(--Tercero);
+    border-radius: 2rem;
+}
+
+/* Contenido Hero */
+.hero {
+    background-image: url(../Imagenes/Instagram_Imagen\ anclada.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-y: center;
+    background-position-x: center;
+    height: 20rem;
+    position: relative;
+    /*Esta es mi etiqueta padre y siempre tiene que tener posicion relativa, siempre y cuando tenga hijos*/
+    margin-bottom: 3rem;
+}
+
+.Contenido-hero {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.8);
+    width: 100%;
+    height: 100%;
+
+    /*Alineando vertical y horizontalmente*/
+    display: flex;
+    flex-direction: column;
+    /*De arriba hacia abajo*/
+    align-items: center;
+    justify-content: center;
+}
+
+.Contenido-hero h2,
+.Contenido-hero p {
+    /*Se ponen comas para decirle que varias etiquetas van a tener las mismas modificaciones*/
+
+    color: var(--Blanco)
+}
+
+.Contenido-hero .Ubicacion {
+    display: flex;
+    align-items: flex-end;
+}
+
+/*Presentacion*/
+.TituloUnder
+{
+    margin: 4rem;
+    text-align: center;
+    font-family: "Charm", serif;
+    font-weight: 700;
+    font-style: normal;
+    color: var(--Secundario);
+    font-size: 3rem;
+    /*-webkit-text-stroke: 0.01rem white; /* Borde de las letras */
+}
+
+.Presentacion {
+    /* Usando Grid */
+    display: grid;
+    grid-template-columns: 50% 50%;
+    column-gap: 1rem;
+    /*Que la el contenido de cada celda quene un poco retirado de a misma celda*/
+}
+.EstasBuscando strong
+{
+    color: var(--Primario);
+}
+
+/* Servicios */
+
+.Servicio {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #333333;
+    border-radius: 3rem;
+    padding: 2rem;
+}
+
+.Servicio h3 {
+    color: var(--Primario);
+
+}
+
+.Servicio p {
+    line-height: 2;
+}
+
+.Servicio .Iconos {
+    height: 15rem;
+    width: 15rem;
+    color: var(--Primario);
+    /* Color de lo iconos jaja yo lo descubri po accidente*/
+    background-color:var(--Secundario);
+    border-radius: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*Contacto*/
+.Formulario {
+    background-color:var(--Tercero);
+    width: min(60rem, 100%);/*Utilizar el valor mas pequeño*/
+    margin: 0 auto; /*Centrado Horizontal*/
+    padding: 2rem;
+    border-radius: 2rem;
+
+}
+
+.Formulario fieldset {
+    border: none;
+}
+
+.Formulario legend {
+    text-align: center;
+    font-size: 1.8rem;
+    text-transform: uppercase; /*Mayusculas*/
+    font-weight: bold;
+    margin-bottom: 2rem;
+    color: var(--Secundario);
+}
+
+.Contactanos /*padre y es un Div*/
+{
+    text-align: center;
+    display: grid;
+    grid-template-columns: 30% 30% 30%;
+    column-gap: 1rem;
+    justify-content: center; /*Centrando Botones*/
+
+}
+.Contactos /*Hijos y son los section*/
+{
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    justify-content: center;
+}
+.Contactos p
+{
+ text-align: center;
+}
+
+.IconosRedes
+{
+    /* Color de lo iconos jaja yo lo descubri po accidente*/
+    color: var(--Primario);
+}
+.BotonContactanos
+{
+    background-color: black;
+    color: white;
+    padding: 0.5rem 0.5rem;
+    margin-top: 1rem;
+    font-size: 1.5rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    border-radius: 0.9rem;
+    text-align: center;
+    border: none;
+}
+.BotonContactanos:hover
+{
+    background-color: var(--Secundario);
+    color: black;
+}
+
+/*Footer*/
+.Footer {
+    margin: 4rem;
+    text-align: center;
+    font-family: "Charm", serif;
+    font-weight: 700;
+    font-style: normal;
+}
+.Footer p
+{
+    text-align: center;
+}
+
+                           /*RESPONSIBELY*/
+
+/*PANTALLAS DE 320, 480 y 768 MAX*/
+@media (max-width: 768px) {
+
+    /*Globales*/
+    .Boton {
+        width: auto;
+    }
+
+    html {
+        font-size: 50%;
+    }
+    h1
+    {
+        font-size: 100%;
+    }
+    .NavegacionPrincipal
+    {
+        margin-top: 4.5rem;
+        width: 100%;
+    }
+
+    /*SECCION PRESENTACION ELITE*/
+    .Presentacion{
+        display: block;
+    }
+    .Presentacion_P2{
+        display: block;
+    }
+    .Grid_1{
+        display: block;
+    }
+    .Servicios section
+    {
+        margin-top: 3rem;
+    }
+    .Servicio
+    {
+        margin-top: 3rem;
+    }
+
+    /*SECCION CONTACTO*/
+    .Formulario
+    {
+        width: auto; /*Ajutasno el fondo negro del formulario*/
+    }
+    .Contactanos{
+        grid-template-columns: auto;
+    }
+    /*Contactanos ´Parte 2*/
+    .ContactanosParte2 p
+    {
+        font-size: 1.6rem;
+    }
+}
+
+/*PANTALLAS APARTIR DE 768px*/
+@media(min-width:768px)
+/*Se usa para modificar el estilo del sitio web cuando se va cambiando el tamañao de la pantalla*/
+    {
+    .NavegacionPrincipal {
+        flex-direction: row;
+        justify-content: space-between;
+        /*Depende de display:flex*/
+    }
+    .Servicios {
+        /* Usando Grid */
+        display: grid;
+        grid-template-columns: 33% 33% 33%;
+        column-gap: 1rem;
+        /*Que la el contenido de cada celda quene un poco retirado de a misma celda*/
+    }
+    .Servicios section
+    {
+        margin-top: 3rem;
+    }
+    .Servicio
+    {
+        margin-top: 3rem;
+    }
+
+}
